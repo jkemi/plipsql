@@ -1,0 +1,19 @@
+# gradle
+.gradle/
+build/
+bin/
+
+# eclipse
+.classpath
+.project
+.settings
+.metadata
+Servers
+
+# netbeans
+.nb-gradle/
+nbproject/
+nbbuild/
+dist/
+
+build.xml

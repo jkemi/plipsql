@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+group = 'org.plip'
+version = '1.0'
+//sourceCompatibility = JavaVersion.VERSION_1_7
+//targetCompatibility = JavaVersion.VERSION_1_7
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile('org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1')
+	compile('org.slf4j:slf4j-api:[1.7,)')
+
+	testCompile('junit:junit:[4,)')
+	testCompile('org.slf4j:slf4j-jdk14:[1.7,)')
+}
+
+test {
+	systemProperty "java.util.logging.config.file", "logging.properties"
+	testLogging.showStandardStreams = true
+
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
+}
