@@ -1,1 +1,1 @@
-Small helper for working with JDBC from within Java
+Small helpers for working with JDBC from within Java
