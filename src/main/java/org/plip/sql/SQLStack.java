@@ -28,16 +28,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Deque;
 import java.util.concurrent.LinkedBlockingDeque;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * A stack of SQLClosable items that are closed in correct order.
  * @since 1.0
  */
 public final class SQLStack implements SQLClosable {
-
-	private static Logger _logger = LoggerFactory.getLogger(SQLStack.class);
+//	private static Logger _logger = LoggerFactory.getLogger(SQLStack.class);
 
 	private final Deque<SQLClosable> _deque;
 
@@ -136,7 +133,7 @@ public final class SQLStack implements SQLClosable {
 		}
 
 		if (err != null) {
-			_logger.warn("suppressed {} additional exceptions", suppressedCount);
+			//_logger.warn("suppressed {} additional exceptions", suppressedCount);
 			throw err;
 		}
 	}
@@ -145,7 +142,7 @@ public final class SQLStack implements SQLClosable {
 		try {
 			close();
 		} catch (SQLException e) {
-			_logger.info("suppressed a cascading SQL error on guard close", e);
+			//_logger.info("suppressed a cascading SQL error on guard close", e);
 		}
 	}
 }
