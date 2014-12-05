@@ -47,7 +47,7 @@ import java.util.Set;
  *   SELECT colA,colB FROM mytable WHERE foo = :foo AND bar > :foo;
  * </code>
  *
- * Initially based on article by Adam Crume (http://www.java2s.com/Article/Java/Database-JDBC/Named_Parameters_for_PreparedStatement.htm)
+ * Initially based on article by Adam Crume (http://www.javaworld.com/article/2077706/core-java/named-parameters-for-preparedstatement.html)
  * Spring's JDBCTemplate is similar also
  *
  * @since 1.1
@@ -95,8 +95,6 @@ public class ParameterStatement implements SQLClosable {
 	 *				query to parse
 	 * @param paramMap
 	 *				map to hold parameter-index mappings
-	 * @param params
-	 * 				list to hold parameter names
 	 * @return the parsed query
 	 */
 	static final String parse(CharSequence query, Map<String, List<Integer>> paramMap) {
