@@ -1,5 +1,5 @@
 /*
- * This file is part of plipsql Copyright (c) 2010-2014 Jakob Kemi <jakob.kemi@gmail.com>.
+ * This file is part of plipsql Copyright (c) 2010-2015 Jakob Kemi <jakob.kemi@gmail.com>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -52,6 +52,11 @@ public final class SQLStack implements SQLClosable {
 	}
 
 
+	/**
+	 * Convenience constructor that adds one initial closable to stack
+	 * @deprecated Deprecated since 1.1, use {@link #SQLStack()} followed by {@link #push(org.plip.sql.SQLClosable) } instead
+	 * @param g
+	 */
 	public SQLStack(SQLClosable g) {
 		this();
 		push(g);
