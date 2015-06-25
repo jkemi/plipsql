@@ -1,5 +1,5 @@
 /*
- * This file is part of plipsql Copyright (c) 2010-2014 Jakob Kemi <jakob.kemi@gmail.com>.
+ * This file is part of plipsql Copyright (c) 2010-2015 Jakob Kemi <jakob.kemi@gmail.com>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -38,6 +38,9 @@ import java.sql.SQLException;
  * </code></pre>
  *
  * This ensures that {@link Connection#rollback()} is called in all cases where {@link #commit()} isn't reached.
+ *
+ * Since 1.1: If connection is in auto-commit mode (see {@link Connection#setAutoCommit(boolean) }) this wrapper does nothing.
+ *
  * @since 1.0
  */
 public class SQLTransaction implements SQLClosable {
@@ -47,11 +50,7 @@ public class SQLTransaction implements SQLClosable {
 		if (connection == null) {
 			throw new NullPointerException("connection mustn't be null");
 		}
-		if (connection.getAutoCommit()) {
-			throw new SQLException("connection must not be in auto-commit mode");
-		}
-
-		this.connection = connection;
+		this.connection = connection.getAutoCommit() ? null : connection;
 	}
 
 	/**
