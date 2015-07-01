@@ -195,7 +195,7 @@ public class ParameterStatement implements SQLClosable {
 				} else if (c == '"') {
 					inDoubleQuote = true;
 
-				// Chech for casts, starts with double-colon "::..."
+				// Check for casts, starts with double-colon "::..."
 				} else if (c == ':' && n == ':') {
 					parsedQuery.append(':');
 					i++;	// skip one character
