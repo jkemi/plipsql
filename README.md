@@ -33,11 +33,11 @@ Changes
    - Deprecated `SQLStack(SQLClosable c)` constructor.
 
  * `1.0.1` _2014-12-10_.
-   - Removed erroneus jms api compile dependency.
+   - Removed erroneus `provided`-scoped dependency.
    - Removed debug logging.
 
  * `1.0` _2014-09-01_
    - Initial public release.
 
- * `0.x` _<2014_
+ * `0.x` _2010-2014_
    - Private internal usage.
